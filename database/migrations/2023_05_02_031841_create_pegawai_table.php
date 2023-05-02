@@ -13,11 +13,8 @@ return new class extends Migration {
         Schema::create('pegawai', function (Blueprint $table) {
             $table->id();
             $table->string('nama');
-            $table->unsignedBigInteger('jabatan_id');
             $table->string('email')->unique();
             $table->timestamps();
-
-            $table->foreign('jabatan_id')->references('id')->on('jabatan_pegawai');
         });
     }
 
